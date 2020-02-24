@@ -3,62 +3,43 @@ import {
   setTitle,
   setBackground,
   addPuppy,
-  makeThePuppyDance
+  makeThePuppyDance,
+  printOut,
+  theGrandFinale
 } from "./src/demo_api.js";
-// your code goes below here!
-// 0. variables: can be boolean (the lowest level of logic)
-var awake = true;
-var wantBath = false;
-// 1. variables: can be numbers
-var x = 1;
-var y = 2;
-var z = x + y; // 3!
-// 2. variables: can be text! (strings)
-var name = "Spot";
-// 3. variables: can be a collection of things!
-// list: an group of things in an specific order
-var myDay = [
-  "wake up",
-  "eat",
-  "BARK AT THE MAIL MAN",
-  "nap",
-  "PLAY!",
-  "eat",
-  "BARK AT THE TV",
-  "sleep"
-];
-// 3-1. variables can be a collection of thigns!
-// object: a group of things accessed by a "key"
-var myMeals = {
-  breakfast: "dog food",
-  lunch: "Dad's socks",
-  dinner: "dog food",
-  dessert: "Trash can buffet"
-};
-// printing out values
-// 1. "console"
-console.log(z);
-// 2. alert!
-// alert(z);
-// conditional statements
-if (z > 1) {
-  console.log("WOOF!");
-} else {
-  console.log("grr....");
-}
-// Functions!
-// given X do Y
-function bark() {
-  alert("WOOF!");
-}
-// given X return Y
-function calcAgeInDogYears(age) {
+// Your code goes below here!
+
+// ***************************
+// Set variable value
+// ***************************
+let dogName = "";
+setTitle(dogName);
+
+// ***************************
+// Fill in function definition
+// ***************************
+function getDogYears(humanYears) {
   //FILL IN!
-  return age * 7;
 }
-//Time for fun!
+let dogAge = getDogYears(2);
+printOut(dogAge);
+
+// ***************************
+// Try calling other functions, like
+// setBackground, addPuppy, and makeThePuppyDance
+// See EDIT_ME_sample.js for examples
+// ***************************
+theGrandFinale();
+
+// let name = "Amy";
+let color = "azure";
 setTitle("Amy");
-setBackground("cornsilk");
-addPuppy("Filthy Dog", "Stuff You Should Gnaw", 2);
-addPuppy("Puggy", "stuff", 0.1);
-makeThePuppyDance("Filthy Dog");
+setBackground(color);
+addPuppy("Frenchie", "Stuff You Should Gnaw", 1);
+addPuppy("Puggy", "The Barkfast Club", 1);
+addPuppy("Puggers", "How Stuff Barks", 2);
+addPuppy("Labby", "Pup and Vanished", 4);
+makeThePuppyDance("Frenchie");
+makeThePuppyDance("Puggy");
+makeThePuppyDance("Puggers");
+makeThePuppyDance("Labby");

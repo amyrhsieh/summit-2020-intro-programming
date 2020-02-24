@@ -34,6 +34,11 @@ h1 {
   /* When the animation is finished, start again */
   animation-iteration-count: infinite;
 }
+.dvd-logo {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+}
 
 @keyframes shake {
   0% {

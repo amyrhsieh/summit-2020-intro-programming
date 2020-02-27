@@ -5,7 +5,6 @@ import $ from "jquery";
 import { raptorize } from "../lib/jquery.raptorize.1.0";
 import { marqueeify } from "../lib/marqueeify";
 import { startConfetti } from "../lib/confetti.js";
-
 marqueeify($, window);
 raptorize($);
 // list of functions
@@ -24,7 +23,7 @@ export function setBackground(color) {
 let i = 0;
 export function addPuppy(name, podcast, age) {
   const puppyId = i++ % 8;
-  const puppyPicture = `../images/puppy-${puppyId}.jpg`;
+  const puppyPicture = `./images/puppy-${puppyId}.jpg`;
 
   const puppy = document.createElement("div");
   puppy.className = "puppy-podcaster-item card";
@@ -62,9 +61,8 @@ function addLogo() {
 export function theGrandFinale() {
   for (i = 0; i < 60; i++) {
     const puppyId = (i) % 4 + 4; // mf dogs are from 4-7
-    const puppyPicture = `../images/puppy-${puppyId}.jpg`;
     $("body").raptorize({
-      image: puppyPicture,
+      image: `./images/puppy-${puppyId}.jpg`,
       id: `dog-output-${i}`,
       delayTime: i * 1000
     });

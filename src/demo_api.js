@@ -5,7 +5,6 @@ import $ from "jquery";
 import { raptorize } from "../lib/jquery.raptorize.1.0";
 import { marqueeify } from "../lib/marqueeify";
 import { startConfetti } from "../lib/confetti.js";
-const images = require('../images/*.jpg');
 
 marqueeify($, window);
 raptorize($);
@@ -24,9 +23,8 @@ export function setBackground(color) {
 }
 let i = 0;
 export function addPuppy(name, podcast, age) {
-  // Hack: parcel image require map to built out image
   const puppyId = i++ % 8;
-  const puppyPicture = images[`puppy-${puppyId}`];
+  const puppyPicture = `../images/puppy-${puppyId}.jpg`;
 
   const puppy = document.createElement("div");
   puppy.className = "puppy-podcaster-item card";
@@ -64,7 +62,7 @@ function addLogo() {
 export function theGrandFinale() {
   for (i = 0; i < 60; i++) {
     const puppyId = (i) % 4 + 4; // mf dogs are from 4-7
-    const puppyPicture = images[`puppy-${puppyId}`];
+    const puppyPicture = `../images/puppy-${puppyId}.jpg`;
     $("body").raptorize({
       image: puppyPicture,
       id: `dog-output-${i}`,

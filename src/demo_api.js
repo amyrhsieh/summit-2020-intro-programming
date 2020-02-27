@@ -5,6 +5,8 @@ import $ from "jquery";
 import { raptorize } from "../lib/jquery.raptorize.1.0";
 import { marqueeify } from "../lib/marqueeify";
 import { startConfetti } from "../lib/confetti.js";
+const images = require('../images/*.jpg');
+
 marqueeify($, window);
 raptorize($);
 // list of functions
@@ -22,7 +24,10 @@ export function setBackground(color) {
 }
 let i = 0;
 export function addPuppy(name, podcast, age) {
-  const puppyPicture = `./images/puppy-${i++ % 4}.jpg`;
+  // Hack: parcel image require map to built out image
+  const puppyId = i++ % 8;
+  const puppyPicture = images[`puppy-${puppyId}`];
+
   const puppy = document.createElement("div");
   puppy.className = "puppy-podcaster-item card";
   puppy.id = name;
@@ -51,15 +56,17 @@ export function makeThePuppyDance(name) {
 function addLogo() {
   const dvd = document.createElement("img");
   dvd.className = "dvd-logo";
-  dvd.src = "./images/mf.jpg";
+  dvd.src = images["mf"];
   $("body").append(dvd);
   $(".dvd-logo").marqueeify({ speed: 300 });
 }
 
 export function theGrandFinale() {
   for (i = 0; i < 60; i++) {
+    const puppyId = (i) % 4 + 4; // mf dogs are from 4-7
+    const puppyPicture = images[`puppy-${puppyId}`];
     $("body").raptorize({
-      image: "./images/puppy-4.jpg",
+      image: puppyPicture,
       id: `dog-output-${i}`,
       delayTime: i * 1000
     });

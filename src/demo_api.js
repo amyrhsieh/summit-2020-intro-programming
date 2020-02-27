@@ -54,7 +54,7 @@ export function makeThePuppyDance(name) {
 function addLogo() {
   const dvd = document.createElement("img");
   dvd.className = "dvd-logo";
-  dvd.src = images["mf"];
+  dvd.src = '../images/mf.jpg';
   $("body").append(dvd);
   $(".dvd-logo").marqueeify({ speed: 300 });
 }

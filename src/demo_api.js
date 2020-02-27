@@ -22,7 +22,9 @@ export function setBackground(color) {
 }
 let i = 0;
 export function addPuppy(name, podcast, age) {
-  const puppyPicture = `./images/puppy-${i++ % 4}.jpg`;
+  const puppyId = i++ % 8;
+  const puppyPicture = `./images/puppy-${puppyId}.jpg`;
+
   const puppy = document.createElement("div");
   puppy.className = "puppy-podcaster-item card";
   puppy.id = name;
@@ -51,15 +53,16 @@ export function makeThePuppyDance(name) {
 function addLogo() {
   const dvd = document.createElement("img");
   dvd.className = "dvd-logo";
-  dvd.src = "./images/mf.jpg";
+  dvd.src = './images/mf.jpg';
   $("body").append(dvd);
   $(".dvd-logo").marqueeify({ speed: 300 });
 }
 
 export function theGrandFinale() {
   for (i = 0; i < 60; i++) {
+    const puppyId = (i) % 4 + 4; // mf dogs are from 4-7
     $("body").raptorize({
-      image: "./images/puppy-4.jpg",
+      image: `./images/puppy-${puppyId}.jpg`,
       id: `dog-output-${i}`,
       delayTime: i * 1000
     });
